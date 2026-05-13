@@ -1,0 +1,42 @@
+% Put the future works here
+\section{FUTURE WORK}
+
+In the future, the deployed pilot web application should be transitioned from being ready for pilots to being ready for production. Reliability, resilience, functional and integration coverage expansion, full deployment hardening, endpoints governance and user experience improvement, and operational sustainability should be the next phase. The next stage should then be done in four steps to be production ready: Live configuration with real/staging systems, deployment hardening, endpoint governance, and operational handover by training, runbooks, and rollout planning.
+
+\subsection{Reliability and Resilience}
+
+The first issue that needs to be addressed is the Azure coverage preview endpoint when working with reliability and resilience. The production team should look at Azure SQL seed data, rule data availability, configuration data, environment variables, application logs and exception traces. After correction, the same coverage tests that are successful locally should be rerun in Azure to ensure that the environment is consistent.
+
+Also, the system needs to specify resilience behavior for the consumption of connected applications. This encompasses time outs, retry policies, idempotency keys, duplicate-request processing, queueing and scheduled processing as necessary, and reconciliation for failed or partial transactions. These controls are crucial as failures at the endpoint could have secondary implications on downstream posting, presentation of statements and audits.
+
+Monitoring should be rolled out more broadly in the form of Application Insights or other monitoring tool. Alerts should be set up for things like failed synchronization, suspicious logon activity, multiple authorization failures, API failures, slow endpoint response times, coverage-evaluation failures, and high rates of endpoint retries.
+
+\subsection{100\% Functional Coverage and Integration Coverage Extension}
+
+Browser-based end-to-end testing should be expanded and additional workflow scenarios should be added to the mix to provide functional coverage. For future test cycles it is recommended to have sponsor merge validation, upload and retrieval of attachments, flow for LoG activation request, export of report metadata, document preview and download behavior, access denied messaging, and role-specific navigation.
+
+Live/staging configuration with PowerSchool, NetSuite, the Student Charging Portal and the Online Billing System should be expanded to cover integration. These are identifier-mapping-, request and response-payload-, sync-status-, error-handling rule and reconciliation-report validations. The system should reconcile sponsor, student, LoG, charge and allocation as well as statement records between systems so that the associated applications are interpreted in the same way with respect to ISMSponsor data.
+
+Clearly defined API contracts should be used to govern endpoint consumption by connected applications. Every consuming application should have a set of service accounts, authentication mechanism, authorization context, endpoint version, input payload, output payload, and response handling (retry, etc), time out, correlation id, logging, and operational owner.
+
+Sponsor identifier governance also needs to be improved prior to rollout of production. The panel proposed that the Sponsor ID should be assigned in a consistent way and created in the back end, instead of user-input. In the future, it is recommended that an automatic Sponsor ID or unique sponsor code pattern (such as auto-incremented or controlled code sequence) be implemented to ensure sponsor records are consistent, searchable and easier to sync between PowerSchool, NetSuite, Student Charging Portal and Online Billing System.
+
+\subsection{Full Deployment Hardening}
+
+With full deployment hardening, the demo-mode allowances should be turned off for API controllers and there should be authentication and authorization everywhere, regardless of the route. In production, it is recommended not to allow Swagger access or disable it (unless protected for authorized technical users). Secrets should be checked, changed and saved in a secure manner. Production logging rules, secure cookie settings and https-only should be verified.
+
+The findings from the ZAP should be addressed by tightening the CSP, removing or suppressing unneeded server and framework headers, reviewing the cache-control, verifying the setting of cookies, and post-remediation ZAP revalidation. It's also important to set up rate limiting to safeguard the API against any unintentional or malicious requests.
+
+Review production data handling should also be included. Before going live with institutional data, validation with live/staging institutional data should be completed. Documentation of the data-retention rules, audit-log protection, backup procedures, disaster recovery and restoration testing.
+
+\subsection{User Experience and Operational Readiness}
+
+The UAT findings should be addressed in the user experience improvements. Reassigned LoGs should be immediately refreshed or clearly appear on the sponsor merge screen. When submitting supporting documents via change requests they should be reliably displayed on the request details page. LoG activation messages need to indicate that the request is pending on Administrator approval. Selected date range, report type and generation time and user role should be listed on exported reports. The access to a sponsor's document should differentiate between a preview and download, and an access denied message should not reveal any protected information.
+
+Administrative, Admissions, Cashiers, Finance users and Sponsors should have role specific user guides as part of the operational readiness. Runbooks that support should outline: Resolution to merge issues, failed syncs, missing attachments, incorrect coverage rules, endpoint failures, access concerns.
+
+\subsection{Expanded Testing, Training, and Continuous Improvement}
+
+The next test cycle should incorporate Selenium or Playwright browser automation, higher-volume testing with more data, more realistic sponsor and student record tests (load testing), more live Google OAuth testing (using ISM accounts), more comprehensive role based workflow testing, and another round of penetration testing after hardening.
+
+Training should take place prior to the more widespread rollout. Guidance should be provided for administrators, admissions, cashiers, finance staff and for sponsor users based on their role. These users should provide feedback on such issues that should be added to a “backlog” for ongoing improvement; this should ensure that the system will be technically sound and operationally viable as part of ISM's routine billing process.

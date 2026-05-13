@@ -1,0 +1,263 @@
+% Put the project assessment here
+
+\section{PROJECT ASSESSMENT}
+
+This chapter provides the assessment basis for the finished pilot web app for the Sponsor Management and Letter of Guarantee Coverage Integration System. This assessment was meant to see if the system that has been implemented is working, access control, testing evidence, and non-functional checks are adequate to show a capstone demonstration for the International School Manila environment for controlled pilot review.
+
+The Project Assessment chapter provides a description of how the system was assessed. The results of the tests in detail are given in the Results and Discussion chapter. This separation lets the assessment method be evident while keeping the results chapter to justify the final assessment based on the actual Passed and Failed results from testing.
+
+The assessment used a binary result basis. A test item was marked as \textbf{Passed} when the tested function, workflow, control, or system response produced the expected result. A test item was marked as \textbf{Failed} when the expected result was not achieved, the workflow could not be completed, or the system behavior required correction before it could support the intended pilot use.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}
+>{\raggedright\arraybackslash}p{0.30\linewidth}
+>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.18\linewidth}}
+\caption{Assessment basis and result alignment}\label{table:assessment-basis}\\
+\toprule
+\textbf{Assessment area} & \textbf{Basis of assessment} & \textbf{Evidence source} & \textbf{Result location} \\
+\midrule
+\endfirsthead
+\caption[]{Assessment basis and result alignment (continued)}\\
+\toprule
+\textbf{Assessment area} & \textbf{Basis of assessment} & \textbf{Evidence source} & \textbf{Result location} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Consolidated appendix register & All supporting PDF evidence was organized into a single appendix map before presenting the detailed test-result tables. & Appendix evidence register covering the UAT, final comparison, security, performance, and Swagger/OpenAPI supporting PDFs. & Appendix A.1. \\
+Functional and API testing & Sponsor, LoG, coverage, reporting, audit, test-account, and endpoint behavior were checked against expected pilot functions. & Final automated and manual test comparison report. & Results and Discussion; Appendix A.3. \\
+User acceptance testing & Administrator, Admissions, Cashier, and Sponsor workflows were assessed using role-based tasks and a Passed or Failed result basis. & UAT response summary and role-based workflow evidence. & Results and Discussion; Appendix A.2. \\
+Security testing & Authentication, authorization, session handling, CSRF protection, SQL injection prevention, audit logging, security headers, and OWASP-aligned controls were reviewed. & Internal security checklist, ZAP comparison, and security fixes report. & Results and Discussion; Appendix A.4. \\
+Performance testing & Load and response-time behavior were checked using Postman test evidence for the 5,000 and 10,000 virtual-user scenarios. & Postman load-test evidence and performance reports. & Results and Discussion; Appendix A.5. \\
+Deployment readiness & Accessibility, Swagger availability, known issues, and endpoint-consumption readiness were reviewed for controlled pilot use. & Deployment checks, Swagger/OpenAPI summary, and known-issue evidence. & Results and Discussion; Appendix A.6. \\
+\end{longtable}
+
+Table~\ref{table:assessment-basis} shows the test areas, evidence sources, and result locations used to assess the pilot. A consolidated map of the appendix evidence is provided in Appendix~A.1 before the detailed appendix result tables. The tables in this chapter define the assessment basis only. The actual Passed and Failed results are discussed in the Results and Discussion chapter.
+
+\subsection{Functional and User Acceptance Testing}
+
+Functional and user acceptance testing assessed whether the implemented workflows could be completed by the supported role groups. The assessment covered the four implemented roles: Administrator, Admissions, Cashier, and Sponsor. The role groups were used to define task coverage and access boundaries. They were not used as a separate measure of project significance.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:user-testing-role-groups-task-coverage} identifies the user groups and task areas used to assess whether the pilot supported the expected role-based workflows.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}
+>{\raggedright\arraybackslash}p{0.72\linewidth}}
+\caption{User-testing role groups and tested task coverage}\label{table:user-testing-role-groups-task-coverage}\\
+\toprule
+\textbf{Role group} & \textbf{Representative tested tasks} \\
+\midrule
+\endfirsthead
+\caption[]{User-testing role groups and tested task coverage (continued)}\\
+\toprule
+\textbf{Role group} & \textbf{Representative tested tasks} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Administrator & Verified staff login, dashboard access, sponsor maintenance, sponsor-contact review, LoG activation controls, settings maintenance, user and role management, reports, exports, monitoring views, and audit-related outputs. \\
+Admissions & Verified staff login, sponsor search, sponsor record review, sponsor-related updates where allowed, LoG viewing, student-related LoG records, workflow-status review, and restriction from administrative functions. \\
+Cashier & Verified staff login, sponsor lookup, LoG review, coverage viewing, attachment review where permitted, report or reconciliation-related outputs, read-oriented access, and restriction from administrative actions. \\
+Sponsor & Verified sponsor login, sponsor profile viewing, sponsor contact viewing, sponsor profile change-request submission, LoG status review, sponsor-specific coverage views, and restriction from internal staff functions. \\
+\end{longtable}
+
+\subsubsection{Success Metrics}
+
+The assessment used Passed and Failed as the result basis. The following rules were applied when interpreting the functional and user-testing outcomes:
+
+\begin{itemize}
+    \item \textbf{Passed:} The tested function, workflow, access-control rule, data action, report output, or system response produced the expected result.
+    \item \textbf{Failed:} The tested function, workflow, access-control rule, data action, report output, or system response did not produce the expected result, could not be completed, or required correction.
+    \item \textbf{Pilot-readiness basis:} The pilot was considered acceptable for controlled review when the required functional and non-functional test areas passed, and any item requiring further action was corrected or documented for future production hardening.
+\end{itemize}
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.08\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.31\linewidth}
+>{\raggedright\arraybackslash}p{0.36\linewidth}}
+\caption{User-testing scenarios and pass/fail assessment basis}\label{table:user-testing-scenarios-pass-fail}\\
+\toprule
+\textbf{ID} & \textbf{Actor} & \textbf{Test scenario} & \textbf{Pass/fail basis} \\
+\midrule
+\endfirsthead
+\caption[]{User-testing scenarios and pass/fail assessment basis (continued)}\\
+\toprule
+\textbf{ID} & \textbf{Actor} & \textbf{Test scenario} & \textbf{Pass/fail basis} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+UT01 & Any role & Login and baseline access validation. & Passed if valid users reached the correct role-based page and invalid access was denied. Failed if login, redirection, or denial behavior did not work as expected. \\
+UT02 & Any role & Role-based access-control enforcement. & Passed if restricted pages and actions were hidden, blocked, or denied. Failed if a role accessed unauthorized functions. \\
+UT03 & Administrator / Admissions & Sponsor record creation. & Passed if a sponsor record was saved, displayed, and searchable after creation. Failed if the record was not saved or could not be retrieved. \\
+UT04 & Administrator / Admissions & Validation and error messaging. & Passed if missing or invalid fields were blocked with a clear message. Failed if invalid data was saved or no message appeared. \\
+UT05 & Administrator / Admissions & Sponsor record update and persistence. & Passed if updated sponsor values remained visible after saving, searching, and retrieval. Failed if changes were lost or displayed incorrectly. \\
+UT06 & Administrator & Sponsor contact and supporting record maintenance. & Passed if sponsor contacts and related records could be reviewed or updated as expected. Failed if records could not be accessed, saved, or displayed correctly. \\
+UT07 & Sponsor & Sponsor profile review and change request. & Passed if the sponsor could view profile information and submit an allowed change request. Failed if the profile or request workflow did not work. \\
+UT08 & Administrator & Sponsor change-request review. & Passed if the Administrator could review and act on a submitted sponsor request. Failed if the request could not be reviewed or tracked. \\
+UT09 & Any role; Administrator for activation & LoG list, coverage view, and activation controls. & Passed if users could search LoG records, view coverage, and perform activation controls according to role. Failed if LoG access or activation behavior was incorrect. \\
+UT10 & Administrator & Report, audit, and traceability review. & Passed if reports, exports, activity records, or audit-related outputs showed traceable system actions. Failed if expected records were missing or inaccurate. \\
+\end{longtable}
+
+Table~\ref{table:user-testing-scenarios-pass-fail} aligns the user-testing scenarios with the same Passed and Failed basis used in the results. This ensures that the assessment criteria match the actual result format used for the pilot evaluation.
+
+\subsection{Non-Functional Testing}
+
+Non-functional testing assessed whether the pilot satisfied baseline quality expectations for controlled review. The non-functional assessment covered security, performance, deployment readiness, mobile responsiveness, and integration readiness.
+
+\subsubsection{Security Testing}
+
+Security testing assessed the system's baseline protection for sponsor and LoG-related data. The testing focused on authentication, authorization, input handling, session behavior, request protection, security headers, audit logging, and security hardening. The evidence came from browser-based testing, role-based test accounts, an internal security checklist, ZAP by Checkmarx, and security-fix verification.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:security-testing-pass-fail} defines the security activities and pass/fail basis used to assess whether the pilot had a safe baseline for controlled review.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.44\linewidth}}
+\caption{Security testing activities and pass/fail assessment basis}\label{table:security-testing-pass-fail}\\
+\toprule
+\textbf{Security activity} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endfirsthead
+\caption[]{Security testing activities and pass/fail assessment basis (continued)}\\
+\toprule
+\textbf{Security activity} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Authentication testing & Browser-based testing; role-based test accounts. & Passed if valid login, invalid login denial, logout behavior, and protected-page restrictions worked. Failed if protected access was possible without valid authentication. \\
+Authorization and role isolation testing & Browser-based testing; role-based test accounts. & Passed if each role accessed only assigned functions. Failed if unauthorized role access was possible. \\
+Dynamic application security testing & ZAP by Checkmarx. & Passed if no critical unresolved risk blocked pilot use and hardening items were corrected or documented. Failed if an unresolved critical issue remained. \\
+Input validation and injection review & Manual testing; ZAP findings; application forms and search fields. & Passed if unsafe or invalid inputs were rejected, sanitized, or safely handled. Failed if unsafe input caused incorrect behavior or exposed risk. \\
+Session and request protection review & Browser-based testing; internal security checklist. & Passed if session and logout behavior protected restricted pages and state-changing actions. Failed if session behavior allowed unauthorized continuation. \\
+Security header and configuration review & ZAP by Checkmarx; internal security checklist. & Passed if required hardening items were corrected or documented for production readiness. Failed if unresolved configuration issues blocked pilot review. \\
+Audit logging review & Application audit or activity records. & Passed if selected sponsor, LoG, user, and settings actions were recorded. Failed if expected traceability records were missing. \\
+Corrective action and re-checking & Security fixes report; repeated manual checks. & Passed if identified failed or hardening items were corrected or accepted as future production work. Failed if corrective action was not completed or documented. \\
+\end{longtable}
+
+\subsubsection{OWASP Focus Areas for Security Testing}
+
+The security review used OWASP focus areas that were relevant to the pilot system. These areas were applied as a review guide for the web application workflows and supporting endpoints.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:owasp-focus-areas-pass-fail} identifies the OWASP-aligned focus areas used to interpret browser-facing security findings and production hardening needs.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.12\linewidth}
+>{\raggedright\arraybackslash}p{0.27\linewidth}
+>{\raggedright\arraybackslash}p{0.53\linewidth}}
+\caption{OWASP focus areas and pass/fail assessment basis}\label{table:owasp-focus-areas-pass-fail}\\
+\toprule
+\textbf{OWASP ID} & \textbf{Risk name} & \textbf{Pass/fail basis} \\
+\midrule
+\endfirsthead
+\caption[]{OWASP focus areas and pass/fail assessment basis (continued)}\\
+\toprule
+\textbf{OWASP ID} & \textbf{Risk name} & \textbf{Pass/fail basis} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+A01 & Broken Access Control & Passed if role-based access was enforced across Sponsor Profile, LoG, Settings, Reports, dashboard, and audit-related records. Failed if unauthorized access was possible. \\
+A02 & Cryptographic Failures & Passed if secure transport and deployment hardening requirements were satisfied or documented for production readiness. Failed if insecure access created a blocking issue. \\
+A03 & Injection & Passed if sponsor fields, search fields, LoG inputs, and settings forms handled unsafe input safely. Failed if unsafe input caused incorrect or risky behavior. \\
+A04 & Insecure Design & Passed if sponsor changes, LoG activation, coverage viewing, review workflows, and traceability behaved as intended. Failed if workflow design caused incorrect or untraceable outcomes. \\
+A05 & Security Misconfiguration & Passed if ZAP and checklist findings did not leave unresolved blocking configuration risks. Failed if a critical misconfiguration remained. \\
+A06 & Vulnerable and Outdated Components & Passed if dependency and platform risks were reviewed or documented for production-readiness work. Failed if a known unresolved component risk blocked pilot use. \\
+A07 & Identification and Authentication Failures & Passed if login, invalid access handling, logout, session behavior, and unauthorized access attempts behaved correctly. Failed if authentication controls could be bypassed. \\
+A08 & Software and Data Integrity Failures & Passed if record changes, attachments, and system actions preserved expected data behavior and traceability. Failed if data integrity or traceability was compromised. \\
+A09 & Security Logging and Monitoring Failures & Passed if selected authentication, sponsor, LoG, user, settings, and administrative actions were logged or traceable. Failed if expected logging was missing. \\
+\end{longtable}
+
+\subsubsection{Performance Testing}
+
+Performance testing assessed load and response-time behavior using Postman. Postman was the tool used for the load-testing scenarios. The assessment used the 5,000 and 10,000 virtual-user evidence discussed in the Results and Discussion chapter.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:performance-testing-pass-fail} presents the basis for assessing response time, load behavior, and error-rate performance during pilot validation.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.44\linewidth}}
+\caption{Performance testing and pass/fail assessment basis}\label{table:performance-testing-pass-fail}\\
+\toprule
+\textbf{Performance area} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endfirsthead
+\caption[]{Performance testing and pass/fail assessment basis (continued)}\\
+\toprule
+\textbf{Performance area} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Postman load testing & Postman; 5,000 and 10,000 virtual-user performance reports. & Passed if the load-test scenarios completed without request errors and produced usable response-time evidence. Failed if the test produced request failures that blocked pilot assessment. \\
+Response-time review & Postman performance reports. & Passed if the evidence supported controlled pilot use. Failed if response behavior prevented pilot validation or endpoint review. \\
+Reliability review & Postman performance reports. & Passed if the test evidence showed stable request completion during the simulated scenarios. Failed if repeated errors or failed requests prevented assessment. \\
+\end{longtable}
+
+\subsubsection{Deployment, Responsiveness, and Integration-Readiness Testing}
+
+Deployment readiness, mobile responsiveness, and integration readiness were assessed to determine whether the pilot could be accessed, reviewed, and prepared for future endpoint consumption.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:deployment-readiness-pass-fail} summarizes the deployment and readiness checks used to separate controlled pilot readiness from full production readiness.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.44\linewidth}}
+\caption{Deployment and readiness testing pass/fail assessment basis}\label{table:deployment-readiness-pass-fail}\\
+\toprule
+\textbf{Readiness area} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endfirsthead
+\caption[]{Deployment and readiness testing pass/fail assessment basis (continued)}\\
+\toprule
+\textbf{Readiness area} & \textbf{Tool or evidence source} & \textbf{Pass/fail basis} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Deployment readiness & Deployed pilot checks; known-issue evidence. & Passed if the pilot could be accessed, reviewed, and used for controlled validation. Failed if deployment issues prevented pilot testing or review. \\
+Swagger/OpenAPI availability & Swagger/OpenAPI documentation. & Passed if endpoint documentation was accessible and supported endpoint review. Failed if documentation was unavailable or unusable. \\
+Mobile responsiveness & Browser responsive view or mobile device review. & Passed if key pages, forms, and actions remained readable and usable on smaller screens. Failed if layout behavior prevented task completion. \\
+Integration readiness & Swagger/OpenAPI review; endpoint checks. & Passed if available endpoints, request parameters, and sample responses could support future integration planning. Failed if endpoint behavior could not be reviewed or explained. \\
+Known-issue classification & Known-issue evidence and readiness summary. & Passed if remaining items were classified as controlled pilot limitations or production-readiness work. Failed if unresolved issues blocked controlled pilot use. \\
+\end{longtable}
+
+\subsection{Assessment Interpretation}
+
+The results given in Results and Discussion chapter were used to interpret the assessment. Functional and user testing was used to evaluate completion of the workflow, access to data by role, data integrity, and traceability. Security testing assisted in the evaluation of authentication, authorization, handling of inputs, behaviors of the sessions, hardening of the configuration and auditability. Performance testing, deployment readiness testing, mobile responsiveness testing, and integration-readiness testing were other kinds of tests used to assess the suitability of the system as a deployed pilot and integration-ready system layer. 
+
+The project was not evaluated as a full enterprise system that was integrated with production. It was an evaluated deployed pilot system layer for integration. The difference is the pilot highlighted sponsor and LoG workflow support, API documentation, coverage evaluation, auditability, production hardening, and readiness to deploy in the external system prior to institutional rollout, and there is still more work to be done in deeper end to end testing and operational ownership prior to rollout.

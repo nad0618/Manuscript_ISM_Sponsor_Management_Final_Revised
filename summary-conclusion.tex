@@ -1,0 +1,36 @@
+% Put the summary and conclusion here
+\section{SUMMARY AND CONCLUSION}
+
+This project was about the design, development, and deployment of a pilot \textbf{Sponsor Management and Letter of Guarantee (LoG) Coverage Integration System} for International School Manila. The project addressed the fact that sponsorship billing was disjointed, with LoG provisions interpreted manually across systems and informal records. This paper-based and manual process was prone to inconsistent \textbf{Bill-To} assignments, lengthy corrections, weak audit trails, and increased reconciliation needs.
+
+The deployed pilot web app included the following features: a centralized \textbf{Sponsor Master}, LoG management, role-based access, coverage evaluation, audit recording, reporting support, local authentication readiness, Google authentication readiness, API documentation, and Azure deployment. The pilot adopted the existing institutional system architecture and incorporated a common decision-making layer for sponsor coverage. This design also allowed the project goal of consistency and traceability to be achieved without any need to change PowerSchool, NetSuite, the Student Charging Portal, or the Online Billing System.
+
+\subsection{Testing Summary}
+
+Main focus areas of testing included functional testing, API testing, and integration testing and focused on the main technical aspects of the pilot. The final automated and manual test report showed \textbf{110 test cases}, of which \textbf{95 passed}, \textbf{12 were noted items}, \textbf{3 were known non-critical defects}, and there were no critical or blocking defects. The results of the core sponsor, LoG, coverage, audit, data integrity, documentation, and test-account functions indicate that they were satisfactory for the capstone demonstration and controlled pilot review.
+
+The user acceptance test was performed to confirm the pilot from an implementation workflow point of view. The UAT evidence reported \textbf{60 unique workflow scenarios}, of which \textbf{54 passed} and \textbf{6 were non-blocking findings} for refinement. The UAT feedback showed that the main workflows were working, but there were also minor improvements that had been identified and would not block any workflow, such as merge refresh behaviour, attachment visibility, confirmation messages, report headers, document download behaviour, and access-denied message clarity.
+
+The security test verified the internal security baseline for controlled pilot use. Topics addressed were authentication, authorization, session handling, CSRF prevention, protected routes, SQL injection prevention, audit logging, Google OAuth configuration, and role-based access control. The internal checklist passed, and evidence from ZAP by Checkmarx highlighted Azure-facing hardening items to be addressed prior to production release, such as revalidation, cookie-setting review, response-header review, and cache-control review.
+
+The performance and load tests of the pilot were verified by performing response-time testing and simulating API load. All pilot endpoint response-time tests were within the specified limits. The 5k and 10k Postman load tests showed a \textbf{0.00\% error rate}, which was indicative of the API's performance under load, similar to what would be expected under integration load. However, the load-test results also indicated spikes in latency and high maximum response times, meaning production work still needs to address timeout limits, database indexing, payload size, caching, resource scaling, and monitoring thresholds.
+
+The Azure deployment and endpoint-consumption review concluded that the pilot has been deployed, is accessible, and is integration-ready but not fully production-integrated. The application could be accessed at \url{http://ismsponsor.azurewebsites.net/}, the health check was successful, most APIs were working, and Swagger documentation was available. The remaining Azure coverage preview issue and demo-mode sync-status behavior indicated that controlled endpoint-consumption rules, live external-system configuration, and environment validation are still required prior to production rollout.
+
+\subsection{Conclusion}
+
+The project delivers the conclusion that the utilization of a centralized Sponsor Master, together with a deterministic LoG coverage engine is a feasible and effective solution to enhance the governance of sponsorship billing at ISM. The pilot showed that sponsor records, rules for LoG, coverage decisions, audit data, and role based workflow can be put together in one application model. It also provided for earlier, clearer, more complete and more consistent coverage decision-making.
+
+The pilot should not be interpreted as being a fully enterprise platform integrated and live, but rather a deployed and integrated system layer. The ability to fully integrate with PowerSchool, NetSuite, the Student Charging Portal and the Online Billing System still needs to be completed. However, the rollout pilot demonstrates that it is possible to deploy consistent and explainable decisions for sponsor coverage without the need for the replacement of ISM's existing core systems.
+% FORMAT HIGHLIGHT: subsection heading
+% FORMAT HIGHLIGHT: LaTeX-safe conversion only; source wording retained
+
+\subsection{Contributions}
+
+The first output from the project is a centralized Sponsor Master to collect information on sponsor identity, contacts, LoG reference, status fields and related governance information.
+
+The second contribution is the deterministic coverage engine to enable explainable Bill-To decisions. This approach is suitable for Finance and Billing as the same inputs will result in the same outcome – along with reason code and audit trail.
+
+The third one is the role based workflow model for Administrator, Admissions, Cashier and Sponsor Users. This model demonstrates how sponsor governance, preparation of LoG, review of billing and sponsor self-service can be distinct and yet allow for coordination across departments.
+
+The last contribution is the API and Swagger/OpenAPI documentation layer, which can be integrated into the system. This gives a good base for future endpoint consumption by connected applications that can be bound in the API contracts, subject to service authentication, authorization scopes, versioning, retry controls, correlation IDs and monitoring. The fifth contribution is the validation package which was based on evidence. The project involves functional testing, UAT, security testing, performance and load testing, evidence of Azure deployment, documentation of known issues, and attachments of appendixes to explain the results. These materials are used for the academic review, technical review, and future production planning.

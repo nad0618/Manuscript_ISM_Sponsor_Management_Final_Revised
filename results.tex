@@ -1,0 +1,328 @@
+% Put the results and discussion here
+
+\section{RESULTS AND DISCUSSION}
+
+The pilot was successfully completed, proving that the architecture used is technically sound and operationally valuable for ISM's sponsorship billing use cases. The system took the project off the planning phase with the use of sponsor management, Letter of Guarantee (LoG) management, role-based workflows and coverage evaluations, audit functions, API documentation, authentication and deployment validation. The pilot application is available for controlled validation at: \url{http://ismsponsor.azurewebsites.net/}. The results demonstrate that the original issue of fragmented and manual LoG interpretation can be overcome by having a centralized \textbf{Sponsor Master} and \textbf{deterministic coverage engine}.
+
+The results discussion is presented in each test area with a logical flow of information and table evidence provided for each testing activity. This organisation divides the verified from the work that still needs to be done in production. It also mirrors the panel suggestion to have a single results discussion as opposed to multiple ones, using duplicate internal labels.
+
+\subsection{Functional Testing, API, and Integration Testing}
+
+Functional, API and integration testing confirmed the basic technical performance of the deployed pilot web application. Testing included infrastructure and health checks, authentication and authorization, Sponsor API endpoints, LoG API endpoints, coverage evaluation, audit and integration endpoints, data integrity, swagger/api documentation and test account validation.
+
+The final test report had 110 test cases with 95 passing, 12 items and 3 known non-critical issues. There was no blocking defect or anything critical. Pilot level results for infrastructure \& health checks, authentication \& authorisation, Sponsor API endpoints, LoG API endpoints, coverage evaluation, security testing, performance testing, data integrity, Swagger documentation, and test account validation were successful.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:final-test-results} summarizes the final automated and manual testing results by category and provides the numerical basis for the functional, API, and integration testing discussion.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.25\linewidth}
+>{\raggedright\arraybackslash}p{0.11\linewidth}
+>{\raggedright\arraybackslash}p{0.10\linewidth}
+>{\raggedright\arraybackslash}p{0.12\linewidth}
+>{\raggedright\arraybackslash}p{0.12\linewidth}
+>{\raggedright\arraybackslash}p{0.22\linewidth}}
+\caption{Final automated and manual test results by category}\label{table:final-test-results}\\
+\toprule
+\textbf{Test category} & \textbf{Test cases} & \textbf{Passed} & \textbf{Findings / known issues} & \textbf{Pass rate} & \textbf{Result} \\
+\midrule
+\endfirsthead
+\caption[]{Final automated and manual test results by category (continued)}\\
+\toprule
+\textbf{Test category} & \textbf{Test cases} & \textbf{Passed} & \textbf{Findings / known issues} & \textbf{Pass rate} & \textbf{Result} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Infrastructure and health & 5 & 5 & 0 & 100.0\% & Passed \\
+Authentication and authorization & 12 & 12 & 0 & 100.0\% & Passed \\
+Sponsor API endpoints & 8 & 8 & 0 & 100.0\% & Passed \\
+Letter of Guarantee API endpoints & 6 & 6 & 0 & 100.0\% & Passed \\
+Coverage evaluation API & 4 & 4 & 0 & 100.0\% & Passed \\
+Audit and integration endpoints & 4 & 3 & 1 & 75.0\% & Passed \\
+Security testing & 15 & 15 & 0 & 100.0\% & Passed \\
+Performance testing & 10 & 10 & 0 & 100.0\% & Passed \\
+Azure production deployment & 8 & 7 & 1 & 87.5\% & Passed \\
+Data integrity & 10 & 10 & 0 & 100.0\% & Passed \\
+Swagger / API documentation & 8 & 8 & 0 & 100.0\% & Passed \\
+Test accounts & 4 & 4 & 0 & 100.0\% & Passed \\
+Additional final test coverage & 16 & 8 & 8 & 50.0\% & Passed \\
+\midrule
+\textbf{Total} & \textbf{110} & \textbf{95} & \textbf{15} & \textbf{86.4\%} & \textbf{Passed for pilot and capstone demonstration} \\
+\end{longtable}
+
+Functional and API testing results conclude that the application has a technical foundation to manage the sponsors, manage the LoG, evaluate coverage, record audit and document the API. Coverage API structured decisions were returned that included Bill-To outcomes, the sponsor's and parent's amounts, reason codes, explanations, decision identifiers, and timestamps and audit record identifiers. This validated the ability of this system to generate explainable coverage decisions as opposed to manually staff-driven coverage decisions.
+
+The testing also revealed an integration readiness that was different from live integration. During the capstone scope, external PowerSchool, NetSuite, Student Charging Portal, and Online Billing System configuration were not finished for full production use, due to integration oriented endpoints and architecture being included in the scope of the pilot project. This caused by design the sync-status endpoint to return an empty response.
+
+The test results of the functional and API tests validate the achievement of the main technical goal of the pilot. The system enables to centralize sponsor and LoG data, applies deterministic rules to check coverage and documents endpoints for future use by connected applications. The results also demonstrate, however, that the availability of endpoints needs to be carefully managed. Endpoints of ISMSponsor should not be consumed by connected applications without well defined API contracts, service-account authentication, authorization scopes, versioning rules, time-outs, retries, idempotency, correlation-ids, and monitoring ownership.
+
+\subsection{User Acceptance Testing}
+
+User acceptance testing (UAT) was used to validate the deployed pilot web-application and if it met the workflow requirements to be used in the controlled pilot. Test items included completion of functions implemented, correctness of access restrictions, clarity of the user facing behaviour and the system's support for the sponsor and Letter of Guarantee operations.
+
+Implementation related outcomes are discussed: Functions completed, Issues noted, Corrective actions, and Impact of the findings on pilot readiness.
+
+The UAT evidence included 60 distinct workflows for a total of 11 tester response sheets and 165 executions of the cases at the level of the different testers. 159 passed and 6 failed out of these executions. The six failures were non-blocking usability or display issues only and were not the basis for not doing the capstone demonstration and/or controlled pilot review.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:uat-summary} summarizes the UAT implementation results and shows how the tester-level executions support controlled pilot review.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.23\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.30\linewidth}}
+\caption{Summary of user acceptance testing implementation results}\label{table:uat-summary}\\
+\toprule
+\textbf{Assessment focus} & \textbf{Total cases} & \textbf{Passed} & \textbf{Findings} & \textbf{Implementation meaning} \\
+\midrule
+\endfirsthead
+\caption[]{Summary of user acceptance testing implementation results (continued)}\\
+\toprule
+\textbf{Assessment focus} & \textbf{Total cases} & \textbf{Passed} & \textbf{Findings} & \textbf{Implementation meaning} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Workflow completion & 165 tester-level executions & 159 & 6 & Core pilot workflows passed, while recorded findings required interface or display refinement. \\
+Access control behavior & Included in workflow testing & Passed & Minor findings only & Restricted actions and protected data remained controlled during UAT. \\
+Reporting and output behavior & Included in workflow testing & Passed & 1 & Report generation worked, but one exported report needed clearer header metadata. \\
+Request and document handling & Included in workflow testing & Passed & 2 & Change-request and document functions worked, but attachment visibility and download labeling required refinement. \\
+Overall UAT result & 165 tester-level executions & 159 & 6 & The pilot passed for controlled review, subject to non-blocking corrective actions. \\
+\end{longtable}
+
+The results of the UAT indicate that the implemented workflows can be used for controlled pilot review. It was also found that the intended separation of duties was achieved with the help of role-based access; however, they were not solely achieved by procedural controls. Non-blocking usability and display problems were found at the UAT. 
+
+They were: No reassigned LoGs displayed on their new sponsor until the following day, LoG visibility in one change-request flow was not clear, no confirmation message was shown when the LoG was activated, no selected date range was visible in one exported report header, no clarity of download behavior of documents and no clarity of access denied message on the LoG.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:uat-findings} lists the non-blocking UAT findings and the corrective actions recommended for the next improvement cycle.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.12\linewidth}
+>{\raggedright\arraybackslash}p{0.12\linewidth}
+>{\raggedright\arraybackslash}p{0.33\linewidth}
+>{\raggedright\arraybackslash}p{0.10\linewidth}
+>{\raggedright\arraybackslash}p{0.25\linewidth}}
+\caption{UAT findings and recommended corrective actions}\label{table:uat-findings}\\
+\toprule
+\textbf{Finding ID} & \textbf{Test case} & \textbf{Issue summary} & \textbf{Severity} & \textbf{Recommended corrective action} \\
+\midrule
+\endfirsthead
+\caption[]{UAT findings and recommended corrective actions (continued)}\\
+\toprule
+\textbf{Finding ID} & \textbf{Test case} & \textbf{Issue summary} & \textbf{Severity} & \textbf{Recommended corrective action} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+UAT-01 & ADM-005 & Merge completed, but reassigned LoGs did not immediately reflect on the primary sponsor list. & \textit{Low} & Refresh the sponsor list after merge or show a confirmation panel listing reassigned LoGs. \\
+UAT-02 & ADS-008 & Supporting document upload did not appear in the request details page after submission. & \textit{Medium} & Verify attachment storage, request-detail retrieval, and display binding. Add a visible attachment status indicator. \\
+UAT-03 & ADS-012 & LoG activation request was submitted, but the confirmation message was unclear. & \textit{Low} & Replace the confirmation with a clearer message indicating that the request is awaiting Administrator approval. \\
+UAT-04 & CSH-013 & Exported report did not include the selected date range in the report header. & \textit{Low} & Add selected date range, report type, generation timestamp, and user role to exported report headers. \\
+UAT-05 & SPO-011 & Document button opened preview, but no direct download option was visible. & \textit{Low} & Add a visible Download button beside Preview, or label the action as Preview if direct download is not enabled. \\
+UAT-06 & SPO-013 & Direct URL access was blocked correctly, but the access-error message was not clear enough for end users. & \textit{Low} & Replace generic error text with a user-friendly access-denied message that does not expose protected data. \\
+\end{longtable}
+
+The UAT results support the operational value of the deployed pilot because the tested workflows correspond to the system functions required for sponsor and LoG processing. The findings show that the application can support governance through role-based access and recorded workflow behavior. The findings did not block pilot use, but they provide corrective actions for the next improvement cycle.
+
+\subsection{Security Testing}
+
+Security testing evaluated the pilot's baseline controls for authentication, authorization, protected routes, session handling, CSRF protection, security headers, SQL injection prevention, audit logging, Google OAuth configuration, and role-based authorization. ZAP by Checkmarx evidence was also used to assess browser-facing hardening issues.
+
+The internal security test checklist recorded 15 security test cases, all of which passed for controlled pilot use. The tested controls included invalid login rejection, password validation, protected route behavior, session management, CSRF protection, security headers, SQL injection prevention, audit logging, OAuth configuration, role-based authorization, and error-message privacy.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:security-results} presents the security controls tested for the pilot and the production notes that must be addressed before live institutional deployment.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}
+>{\raggedright\arraybackslash}p{0.15\linewidth}
+>{\raggedright\arraybackslash}p{0.31\linewidth}
+>{\raggedright\arraybackslash}p{0.26\linewidth}}
+\caption{Security testing results}\label{table:security-results}\\
+\toprule
+\textbf{Security control} & \textbf{Result} & \textbf{Evidence / interpretation} & \textbf{Production note} \\
+\midrule
+\endfirsthead
+\caption[]{Security testing results (continued)}\\
+\toprule
+\textbf{Security control} & \textbf{Result} & \textbf{Evidence / interpretation} & \textbf{Production note} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Invalid login rejection & Passed & Invalid usernames and passwords were rejected with generic error messages. & Continue using generic error messages to avoid account enumeration. \\
+Password validation & Passed & Password complexity requirements were enforced. & Review institutional password policy before rollout. \\
+Protected routes & Passed & Protected routes redirected unauthenticated requests. & Recheck all production routes after demo-mode changes are removed. \\
+Session management & Passed & Cookie-based session handling was verified. & Confirm timeout and lockout settings in production. \\
+CSRF protection & Passed & Anti-forgery tokens were present in forms. & Keep CSRF checks enabled for all state-changing requests. \\
+Security headers & Passed with hardening items & X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, and CSP were present. & Tighten CSP directives and remove unnecessary server/framework headers. \\
+SQL injection prevention & Passed & Entity Framework parameterization was used. & Continue using parameterized access and avoid raw SQL without review. \\
+Audit logging & Passed & Activity and decision audit records were generated. & Protect audit tables from unauthorized modification. \\
+Google OAuth configuration & Passed with manual validation requirement & OAuth was configured for @ismanila.org accounts with domain restriction and auto-provisioning. & Complete live browser OAuth testing using an actual ISM Google account. \\
+Role-based authorization & Passed & Role-based authorization attributes were present and access boundaries were tested. & Remove demo-mode anonymous API access before production release. \\
+\end{longtable}
+
+The security findings showed that the pilot had a functioning baseline for controlled validation. However, ZAP evidence identified Azure-facing hardening items that still required remediation and revalidation. These included Content Security Policy tightening, unnecessary response-header suppression, cache-control review, and cookie-setting verification. The security fixes report documented corrective actions, but production release still required post-remediation testing against the deployed Azure environment.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:zap-findings} identifies the ZAP by Checkmarx findings and the hardening actions needed before production exposure.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.16\linewidth}
+>{\raggedright\arraybackslash}p{0.20\linewidth}
+>{\raggedright\arraybackslash}p{0.24\linewidth}
+>{\raggedright\arraybackslash}p{0.23\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}}
+\caption{ZAP by Checkmarx security scan findings and hardening plan}\label{table:zap-findings}\\
+\toprule
+\textbf{Risk level} & \textbf{Finding} & \textbf{Interpretation} & \textbf{Recommended action} & \textbf{Priority} \\
+\midrule
+\endfirsthead
+\caption[]{ZAP by Checkmarx security scan findings and hardening plan (continued)}\\
+\toprule
+\textbf{Risk level} & \textbf{Finding} & \textbf{Interpretation} & \textbf{Recommended action} & \textbf{Priority} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\textit{Medium} & CSP wildcard / unsafe-inline directive & CSP exists but permits broad or inline sources that weaken browser-side protection. & Replace wildcard and unsafe-inline directives with explicit trusted sources. Use nonces or hashes for required inline scripts or styles. & High \\
+\textit{Low} & Server or framework information disclosure & Response headers may reveal server or framework details. & Suppress or standardize X-Powered-By and Server headers where supported by hosting configuration. & Medium \\
+Info. & Authentication request identified & ZAP detected a login form and related authentication parameters. & No fix required by itself. Confirm login attempts are logged and rate-limited. & Low \\
+Info. & Cache-control review & Some responses may require review to prevent caching of sensitive pages. & Ensure authenticated pages use no-store or equivalent cache-control headers. & Medium \\
+Info. & Session-management response identified & ZAP identified session behavior. & No direct vulnerability. Confirm secure, HttpOnly, SameSite cookie settings. & Low \\
+Info. & User-agent fuzzing / user-controllable attributes & Scanner observed input and rendering behaviors that require review. & Validate output encoding and avoid rendering user-controlled HTML attributes unsafely. & Medium \\
+\end{longtable}
+
+The security results should be interpreted as pilot readiness, not final production security certification. The pilot demonstrated that core authentication, authorization, and audit controls were feasible within the selected architecture. The remaining ZAP findings were not treated as blockers for capstone demonstration, but they were important production-hardening requirements. Before external systems consume ISMSponsor endpoints, the production environment should enforce service authentication, least-privilege access, rate limiting, logging, and endpoint-level authorization.
+
+\subsection{Performance and Load Testing}
+
+The operations that have been selected for performance testing have been checked for response time, and additionally Postman load-test evidence has been provided. To see if the pilot could facilitate controlled validation and if further tuning were required before the pilot could be used in production.
+
+Pilot response-time tests were successful and met the response-time endpoint requirements. Postman was used for load testing and the performance evidence included 5,000 and 10,000 virtual user scenarios. The 5,000 virtual user test resulted in 71,400 requests at an average of 237.59 requests per second, average response time of 3,148 ms and 0.00\% error rate. 200,600 requests were processed in 10,000 virtual users at 661.56 requests per second with 0.00\% error rate and 2,159 ms average response time.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:postman-load-results} summarizes the Postman load-testing results used to assess API reliability under simulated high-volume access.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}
+>{\raggedright\arraybackslash}p{0.16\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.11\linewidth}}
+\caption{Postman load-testing results}\label{table:postman-load-results}\\
+\toprule
+\textbf{Load-test scenario} & \textbf{Requests processed} & \textbf{Requests per second} & \textbf{Average response time} & \textbf{Error rate} & \textbf{Result} \\
+\midrule
+\endfirsthead
+\caption[]{Postman load-testing results (continued)}\\
+\toprule
+\textbf{Load-test scenario} & \textbf{Requests processed} & \textbf{Requests per second} & \textbf{Average response time} & \textbf{Error rate} & \textbf{Result} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+5,000 virtual users & 71,400 & 237.59 & 3,148 ms & 0.00\% & Passed \\
+10,000 virtual users & 200,600 & 661.56 & 2,159 ms & 0.00\% & Passed \\
+\end{longtable}
+
+The key performance takeaway is that the API performed well under load simulated in an integration setup, both runs of the Postman load tests were executed with 0.00\% error. But on the other hand, the same evidence revealed some peaks of latency and very high maximum response time. This indicates that the system was reliable during pilot load testing, but further review is required for timeout limits, database indexing, response payload size, caching strategy, scaling of resources and monitoring thresholds for use.
+
+The results of the performance are satisfactory for the pilots, but not sufficient for unrestricted production. Not having to deal with request errors is a good thing, particularly for APIs integration cases. But if endpoint consumption will not be controlled, latency spikes could impact connected applications. In the future, timeout and retry logic should be established to ensure that PowerSchool, NetSuite, the Student Charging Portal and Online Billing System do not generate duplicate requests, failed postings, or inconsistent billing states when there is a delay in the response.
+
+\subsection{Deployment Readiness, Known Issues, and Endpoint Consumption}
+
+Readiness testing for deployment confirmed that the application could be deployed in a cloud hosted environment, and that the expected application and API documentation endpoints could be accessed. Known issues were discussed and distinguished between pilot ready and production ready. The application was accessible, health check was successful, Swagger documentation was present and most APIs were functioning as expected. Three non-critical known issues were discovered: Azure coverage preview behavior, demo-mode empty integration sync status, and a need for more in-depth browser-based end-to-end UI testing.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+Table~\ref{table:known-issues} identifies the remaining known issues from final testing and explains why they were classified as non-critical for capstone demonstration.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.18\linewidth}
+>{\raggedright\arraybackslash}p{0.31\linewidth}
+>{\raggedright\arraybackslash}p{0.22\linewidth}
+>{\raggedright\arraybackslash}p{0.14\linewidth}}
+\caption{Known issues from final testing}\label{table:known-issues}\\
+\toprule
+\textbf{Issue ID} & \textbf{Area} & \textbf{Description} & \textbf{Impact} & \textbf{Status} \\
+\midrule
+\endfirsthead
+\caption[]{Known issues from final testing (continued)}\\
+\toprule
+\textbf{Issue ID} & \textbf{Area} & \textbf{Description} & \textbf{Impact} & \textbf{Status} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+KI-01 & Azure coverage preview & Coverage preview returned HTTP 500 in Azure, likely because of Azure SQL seeding or environment configuration. & Low for capstone demonstration; medium before production rollout. & Deferred to post-capstone fix \\
+KI-02 & Integration sync status & Sync-status endpoint returned an empty response because external PowerSchool, NetSuite, and OBS integration configuration was not completed for the demo. & Low for pilot demonstration; required before live integration. & As designed for demo mode \\
+KI-03 & UI workflow depth & Some workflows still require deeper browser-based and end-to-end UI testing. & Low for capstone demonstration; medium before production rollout. & Recommended for production deployment \\
+\end{longtable}
+
+The Azure coverage preview endpoint returned an HTTP 500 error in the Azure environment, likely because the databases were not seeded or the environments were not configured the same. The coverage evaluation logic was tested in the local environment and thus the problem was not deemed to be a fault of the rule model itself, but rather an environment-specific problem. Sync-status endpoint did not return any data since live external integration configuration was not done during the pilot. These discoveries validate the pilot, and that it was deployed and testable, but not yet production complete.
+
+The extent of the project is limited to the deployment and the known issue results. The application is not an enterprise platform that's fully live-integrated, it's a deployed pilot and integration ready system layer. Thus, the issue of endpoint-consumer is at the heart of the next phase. Prior to connected applications using ISMSponsor endpoint(s), ISM should define endpoint ownership, request/response contracts, method of authentication, retry behavior, error handling, reconciliation policies, and monitoring responsibilities. These controls will aid in minimizing endpoint consumption from generating inconsistencies downstream.
+
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{\fill}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}
+>{\raggedright\arraybackslash}p{0.31\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.25\linewidth}}
+\caption{Pilot deployment readiness summary}\label{table:readiness-summary}\\
+\toprule
+\textbf{Readiness area} & \textbf{Evidence from pilot} & \textbf{Status} & \textbf{Remaining action before full production} \\
+\midrule
+\endfirsthead
+\caption[]{Pilot deployment readiness summary (continued)}\\
+\toprule
+\textbf{Readiness area} & \textbf{Evidence from pilot} & \textbf{Status} & \textbf{Remaining action before full production} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Core functionality & Sponsor CRUD, LoG APIs, coverage evaluation, audit trail, data persistence, and documentation were tested successfully. & \textbf{Ready for pilot use} & Complete end-to-end browser automation and production workflow retesting. \\
+User acceptance & Workflow-based UAT verified the implemented pilot functions and identified only non-blocking usability or display findings. & \textbf{Ready for pilot use} & Resolve non-blocking usability findings from UAT. \\
+Security baseline & Authentication, authorization, CSRF protection, security headers, SQL injection prevention, and audit logging passed final tests. & \textbf{Ready for controlled pilot} & Remove demo-mode allowances, tighten CSP, suppress unnecessary headers, and retest. \\
+Performance & Postman load tests showed a 0.00\% error rate for the 5,000 and 10,000 virtual-user scenarios. & \textbf{Ready for pilot use} & Review latency spikes, timeout limits, indexing, payload size, caching, resource scaling, and monitoring thresholds using realistic records and concurrent users. \\
+Deployment & Application access, health check, Swagger availability, and most APIs were verified. & \textit{Partially ready} & Fix Azure coverage preview and validate Azure SQL seed/configuration. \\
+External integrations & Integration endpoints exist, but live external systems were not configured for the demo. & \textit{Not yet production-ready} & Configure and validate PowerSchool, NetSuite, Student Charging Portal, and OBS integration endpoints. \\
+Endpoint consumption & REST endpoints and Swagger documentation support future connected-application consumption. & \textit{Integration-ready} & Define API contracts, service accounts, authorization scopes, versioning, retry rules, timeout limits, idempotency, correlation IDs, and monitoring ownership. \\
+Documentation & Swagger/OpenAPI documentation and test reports were available. & \textbf{Ready for pilot use} & Add role-specific user guides and operational runbooks. \\
+Overall decision & Final testing showed \textbf{95 passed} cases out of 110, with \textbf{no critical or blocking defects}. & Approved for \textbf{capstone demonstration} and \textbf{controlled pilot review} & Complete production hardening before live institutional deployment. \\
+\end{longtable}
+
+The important conclusions of the pilot are summarized in Table~\ref{table:readiness-summary}. It validates the capstone and controlled pilot goals of the deployed pilot web app and indicates where there is more to be done before it is ready to fully use in production.
+
+In general, the work demonstrates that there is a need for technical testing to go hand-in-hand with user testing. API behavior, security controls, performance and data persistence were confirmed via automated testing. The user testing identified some areas for improvement around the clarity of workflow, user expectations and interface behavior that should be addressed prior to rollout in production. As a result, the pilot not only provided validation evidence, but also a workable list of tasks to complete for the next development round. The most significant one is for integration projects to be not just technical issues. They also need to be owned, have defined roles, accurate audit logs, controlled endpoint consumption and explanations at the user level.

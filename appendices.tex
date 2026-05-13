@@ -1,0 +1,354 @@
+% Appendix results gathered from the supporting PDF files
+
+\clearpage
+\section*{\parbox{\textwidth}{\centering APPENDIX A: TEST RESULT EVIDENCE FROM SUPPORTING PDF FILES}}
+\addcontentsline{toc}{section}{APPENDIX A: TEST RESULT EVIDENCE FROM SUPPORTING PDF FILES}
+
+The following appendix consolidates the test-result details gathered from the supporting PDF files included with the manuscript package; each subsection is introduced by one concise sentence that states why the evidence was included and when the related test or report was completed.
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+
+\subsection*{\parbox{\textwidth}{\centering A.1: Consolidated Appendix Evidence Register}}
+\phantomsection
+\label{app:appendix-evidence-register}
+\addcontentsline{toc}{subsection}{A.1: Consolidated Appendix Evidence Register}
+
+This appendix was prepared on April 27, 2026, to consolidate the supporting PDF evidence into one register so the UAT, final comparison, security, performance, and Swagger/OpenAPI results can be traced from a single appendix reference.
+
+{\footnotesize
+Table~\ref{table:appendix-evidence-register} maps each appendix subsection to the supporting PDF evidence, the date of the evidence, and the reason the evidence was included.
+
+\begin{longtable}{|>{\centering\arraybackslash}p{0.12\linewidth}|>{\raggedright\arraybackslash}p{0.24\linewidth}|>{\raggedright\arraybackslash}p{0.37\linewidth}|>{\centering\arraybackslash}p{0.17\linewidth}|}
+\hline
+\textbf{Appendix} & \textbf{Appendix summary} & \textbf{Evidence summarized from PDF files} & \textbf{Result} \\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\textbf{A.1: Consolidated Appendix Evidence Register (continued)}}\\
+\hline
+\textbf{Appendix} & \textbf{Appendix summary} & \textbf{Evidence summarized from PDF files} & \textbf{Result} \\
+\hline
+\endhead
+\hline
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\hline
+\caption{Consolidated appendix evidence register gathered from supporting PDF files}\label{table:appendix-evidence-register}
+\endlastfoot
+A.1 & Appendix evidence register. & Lists the supporting PDF evidence used for the appendix result tables and identifies the testing area, gathered details, and summarized result for each appendix item. & REFERENCE \\
+\hline
+A.2 & User acceptance testing appendix. & Consolidates 11 tester response sheets for Administrator, Admissions, Cashier, and Sponsor roles, including executed cases, passed cases, failed findings, and overall pass rate. & PASS \\
+\hline
+A.3 & Final test comparison appendix. & Compares initial and final test reports by total test cases, passed tests, pass rate, failed tests, critical issues, known issues, and readiness status. & PASS \\
+\hline
+A.4 & Security fixes and ZAP appendix. & Summarizes post-scan remediation and compares ZAP scan runs by high, medium, low, and informational findings, including remaining infrastructure hardening items. & PASS WITH HARDENING ITEMS \\
+\hline
+A.5 & Performance testing appendix. & Records Postman load-test volume, throughput, duration, average response time, request-level metrics, and error rate for the 5,000 and 10,000 VU runs. & PASS \\
+\hline
+A.6 & Swagger/OpenAPI implementation appendix. & Documents API documentation setup, implementation date, package version, API version, project dependency, program configuration, and integration relevance. & IMPLEMENTED \\
+\hline
+\end{longtable}
+}
+
+\subsection*{\parbox{\textwidth}{\centering A.2: User Acceptance Testing Summary}}
+\phantomsection
+\label{app:uat-evidence}
+\addcontentsline{toc}{subsection}{A.2: User Acceptance Testing Summary}
+
+This appendix was included to document stakeholder validation of the staging build, and the UAT responses were recorded on April 25, 2026 at 09:55 to 09:56, covering 165 executed cases, 159 passed cases, 6 non-blocking findings, and a 96.4\% overall pass rate.
+
+{\footnotesize
+Table~\ref{table:appendix-uat-summary} summarizes the overall UAT execution count, pass count, and non-blocking findings gathered from the UAT evidence.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.30\linewidth}|>{\raggedright\arraybackslash}p{0.55\linewidth}|>{\centering\arraybackslash}p{0.10\linewidth}|}
+\hline
+\textbf{UAT item} & \textbf{Evidence summarized from PDF file} & \textbf{Result} \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\textbf{A.2: User Acceptance Testing Summary (continued)}}\\
+\hline
+\textbf{UAT item} & \textbf{Evidence summarized from PDF file} & \textbf{Result} \\
+\hline
+\endhead
+\hline
+\caption{User acceptance testing summary gathered from the UAT PDF file}\label{table:appendix-uat-summary}
+\endlastfoot
+Number of testers & 11 testers participated in UAT. The roles covered were Administrator, Admissions, Cashier, and Sponsor. & PASS \\
+\hline
+Build tested & UAT Staging Build 1.0 was used for the tester response sheets. & PASS \\
+\hline
+Total test cases executed & 165 role-based test cases were executed across all UAT responses. & PASS \\
+\hline
+Passed cases & 159 cases passed. & PASS \\
+\hline
+Failed cases & 6 cases were recorded with findings or failed results. These were treated as non-blocking UAT findings for controlled review. & NOTE \\
+\hline
+Overall pass rate & The UAT PDF reports a 96.4\% overall pass rate. & PASS \\
+\hline
+\end{longtable}
+}
+
+{\footnotesize
+Table~\ref{table:appendix-uat-role-summary} shows the role-based UAT results used to confirm that administrator, admissions, cashier, and sponsor workflows were tested.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\linewidth}|>{\centering\arraybackslash}p{0.14\linewidth}|>{\centering\arraybackslash}p{0.14\linewidth}|>{\centering\arraybackslash}p{0.14\linewidth}|>{\centering\arraybackslash}p{0.14\linewidth}|>{\centering\arraybackslash}p{0.12\linewidth}|}
+\hline
+\textbf{Role} & \textbf{Testers} & \textbf{Cases} & \textbf{Passed} & \textbf{Failed} & \textbf{Pass rate} \\
+\hline
+\endfirsthead
+\multicolumn{6}{c}{\textbf{UAT Role-Based Summary (continued)}}\\
+\hline
+\textbf{Role} & \textbf{Testers} & \textbf{Cases} & \textbf{Passed} & \textbf{Failed} & \textbf{Pass rate} \\
+\hline
+\endhead
+\hline
+\caption{UAT role-based test result summary}\label{table:appendix-uat-role-summary}
+\endlastfoot
+Administrator & 2 & 30 & 29 & 1 & 96.7\% \\
+\hline
+Admissions & 3 & 45 & 43 & 2 & 95.6\% \\
+\hline
+Cashier & 3 & 45 & 44 & 1 & 97.8\% \\
+\hline
+Sponsor & 3 & 45 & 43 & 2 & 95.6\% \\
+\hline
+\end{longtable}
+}
+
+\subsection*{\parbox{\textwidth}{\centering A.3: Final Test Results Comparison}}
+\phantomsection
+\label{app:final-test-comparison}
+\addcontentsline{toc}{subsection}{A.3: Final Test Results Comparison}
+
+This appendix was included to show why the final test results superseded the initial report, and the comparison evidence came from April 23, 2026 test-result documents that were exported with the appendix package on April 27, 2026.
+
+{\footnotesize
+Table~\ref{table:appendix-final-test-comparison} compares the initial and final test reports to show how the overall test result improved before controlled pilot review.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\linewidth}|>{\centering\arraybackslash}p{0.17\linewidth}|>{\centering\arraybackslash}p{0.17\linewidth}|>{\centering\arraybackslash}p{0.15\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|}
+\hline
+\textbf{Metric} & \textbf{Initial report} & \textbf{Final report} & \textbf{Change} & \textbf{Result} \\
+\hline
+\endfirsthead
+\multicolumn{5}{c}{\textbf{A.3: Final Test Results Comparison (continued)}}\\
+\hline
+\textbf{Metric} & \textbf{Initial report} & \textbf{Final report} & \textbf{Change} & \textbf{Result} \\
+\hline
+\endhead
+\hline
+\caption{Initial and final test-result comparison gathered from the comparison PDF file}\label{table:appendix-final-test-comparison}
+\endlastfoot
+Total test cases & 100 & 110 & +10 & Improved coverage \\
+\hline
+Tests passed & 78 & 95 & +17 & Improved \\
+\hline
+Pass rate & 78.0\% & 86.4\% & +8.4 percentage points & Improved \\
+\hline
+Pass with conditions & 15 & 12 & -3 & Improved \\
+\hline
+Failed tests & 4 & 0 & -4 & Resolved \\
+\hline
+Critical issues & 0 & 0 & 0 & Maintained \\
+\hline
+Known issues & 4 & 3 & -1 & Improved \\
+\hline
+Overall status & Pass with conditions & Ready for controlled pilot review & Status advanced & Approved for controlled pilot review \\
+\hline
+\end{longtable}
+}
+
+{\footnotesize
+Table~\ref{table:appendix-final-test-category-summary} breaks down the final testing result by technical category to show which areas passed and which areas remained noted items.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.38\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|}
+\hline
+\textbf{Final test category} & \textbf{Total} & \textbf{Passed} & \textbf{Pass rate} & \textbf{Result} \\
+\hline
+\endfirsthead
+\multicolumn{5}{c}{\textbf{Final Test Category Summary (continued)}}\\
+\hline
+\textbf{Final test category} & \textbf{Total} & \textbf{Passed} & \textbf{Pass rate} & \textbf{Result} \\
+\hline
+\endhead
+\hline
+\caption{Final test category results gathered from the comparison PDF file}\label{table:appendix-final-test-category-summary}
+\endlastfoot
+Infrastructure and health & 5 & 5 & 100\% & PASS \\
+\hline
+Authentication and authorization & 12 & 12 & 100\% & PASS \\
+\hline
+API endpoints: Sponsors & 8 & 8 & 100\% & PASS \\
+\hline
+API endpoints: LoG & 6 & 6 & 100\% & PASS \\
+\hline
+API endpoints: Coverage & 4 & 4 & 100\% & PASS \\
+\hline
+API endpoints: Audit and integration & 4 & 3 & 75\% & NOTE \\
+\hline
+Security testing & 15 & 15 & 100\% & PASS \\
+\hline
+Performance testing & 10 & 10 & 100\% & PASS \\
+\hline
+\end{longtable}
+}
+
+\subsection*{\parbox{\textwidth}{\centering A.4: Security Fixes and ZAP Comparative Results}}
+\phantomsection
+\label{app:security-evidence}
+\addcontentsline{toc}{subsection}{A.4: Security Fixes and ZAP Comparative Results}
+
+This appendix was included to explain why security remediation was required before production readiness, and it summarizes security fixes and OWASP ZAP comparative evidence from April 23, 2026 reports exported with the appendix package on April 27, 2026.
+
+{\footnotesize
+Table~\ref{table:appendix-security-fixes-summary} summarizes the security fixes completed or accepted before the pilot was treated as ready for controlled review.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.20\linewidth}|>{\centering\arraybackslash}p{0.20\linewidth}|>{\centering\arraybackslash}p{0.20\linewidth}|>{\raggedright\arraybackslash}p{0.30\linewidth}|}
+\hline
+\textbf{Risk level} & \textbf{Issues before} & \textbf{Issues after} & \textbf{Result gathered from security fixes PDF} \\
+\hline
+\endfirsthead
+\multicolumn{4}{c}{\textbf{A.4: Security Fixes Summary (continued)}}\\
+\hline
+\textbf{Risk level} & \textbf{Issues before} & \textbf{Issues after} & \textbf{Result gathered from security fixes PDF} \\
+\hline
+\endhead
+\hline
+\caption{Security fixes summary gathered from the security fixes PDF file}\label{table:appendix-security-fixes-summary}
+\endlastfoot
+High & 0 & 0 & No high-risk issues were recorded. \\
+\hline
+Medium & 5 & 0 & All medium-risk issues were fixed. \\
+\hline
+Low & 5 & 0 & All low-risk issues were fixed. \\
+\hline
+Informational & 5 & 5 & Informational findings remained and did not require corrective action. \\
+\hline
+Overall result & 15 security items & 15 resolved or accepted & 5 medium issues, 5 low issues, and 5 improvement items were resolved or addressed. \\
+\hline
+\end{longtable}
+}
+
+{\footnotesize
+Table~\ref{table:appendix-zap-risk-summary} compares OWASP ZAP risk levels across scans to show the remaining browser-facing hardening items.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.22\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|>{\raggedright\arraybackslash}p{0.20\linewidth}|}
+\hline
+\textbf{Risk level} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{Target or result} \\
+\hline
+\endfirsthead
+\multicolumn{5}{c}{\textbf{OWASP ZAP Risk-Level Comparison (continued)}}\\
+\hline
+\textbf{Risk level} & \textbf{Test 1} & \textbf{Test 2} & \textbf{Test 3} & \textbf{Target or result} \\
+\hline
+\endhead
+\hline
+\caption{OWASP ZAP comparative risk-level results gathered from the ZAP PDF file}\label{table:appendix-zap-risk-summary}
+\endlastfoot
+High & 0 & 0 & 0 & Target maintained at 0. \\
+\hline
+Medium & 5 & 4 & 4 & Target after deployment is 0. Code-level fixes were documented, while Azure redeployment remained pending in the report. \\
+\hline
+Low & 5 & 4 & 2 & Target after deployment is 2 to 4. Remaining low-risk items were identified as Azure infrastructure cookie items. \\
+\hline
+Informational & 5 & 5 & 5 & Informational findings remained accepted. \\
+\hline
+Deployment status & Initial scan & Post-configuration scan & Current Azure scan & Ready to deploy, awaiting Azure redeployment according to the PDF. \\
+\hline
+\end{longtable}
+}
+
+\subsection*{\parbox{\textwidth}{\centering A.5: Performance Test Results}}
+\phantomsection
+\label{app:performance-evidence}
+\addcontentsline{toc}{subsection}{A.5: Performance Test Results}
+
+This appendix was included to verify whether the API could support higher request loads, and the Postman 5,000 and 10,000 virtual-user tests were executed on April 24, 2026 from 15:16 to 15:27 (GMT+8), with 0.00\% error rate in both runs.
+
+{\footnotesize
+Table~\ref{table:appendix-performance-summary} summarizes the 5,000 and 10,000 virtual-user load-test runs used to support the performance discussion.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.16\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|>{\centering\arraybackslash}p{0.16\linewidth}|>{\centering\arraybackslash}p{0.18\linewidth}|>{\centering\arraybackslash}p{0.17\linewidth}|>{\centering\arraybackslash}p{0.10\linewidth}|}
+\hline
+\textbf{Load test} & \textbf{Total requests} & \textbf{Throughput} & \textbf{Average response time} & \textbf{Duration} & \textbf{Error rate} \\
+\hline
+\endfirsthead
+\multicolumn{6}{c}{\textbf{A.5: Performance Test Results (continued)}}\\
+\hline
+\textbf{Load test} & \textbf{Total requests} & \textbf{Throughput} & \textbf{Average response time} & \textbf{Duration} & \textbf{Error rate} \\
+\hline
+\endhead
+\hline
+\caption{Performance load-test summary gathered from the Postman performance PDF files}\label{table:appendix-performance-summary}
+\endlastfoot
+5,000 virtual users & 71,400 & 237.59 requests/second & 3,148 ms & 5 minutes & 0.00\% \\
+\hline
+10,000 virtual users & 200,600 & 661.56 requests/second & 2,159 ms & 5 minutes & 0.00\% \\
+\hline
+\end{longtable}
+}
+
+{\footnotesize
+Table~\ref{table:appendix-performance-request-metrics} provides request-level metrics for the health-check and sponsor-fetch endpoints during the two load-test runs.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.19\linewidth}|>{\raggedright\arraybackslash}p{0.22\linewidth}|>{\centering\arraybackslash}p{0.17\linewidth}|>{\centering\arraybackslash}p{0.12\linewidth}|>{\centering\arraybackslash}p{0.12\linewidth}|>{\centering\arraybackslash}p{0.10\linewidth}|}
+\hline
+\textbf{Load test} & \textbf{Request} & \textbf{Total requests} & \textbf{Requests/s} & \textbf{Avg. ms} & \textbf{Error} \\
+\hline
+\endfirsthead
+\multicolumn{6}{c}{\textbf{Performance Request-Level Results (continued)}}\\
+\hline
+\textbf{Load test} & \textbf{Request} & \textbf{Total requests} & \textbf{Requests/s} & \textbf{Avg. ms} & \textbf{Error} \\
+\hline
+\endhead
+\hline
+\caption{Performance request-level metrics gathered from the Postman performance PDF files}\label{table:appendix-performance-request-metrics}
+\endlastfoot
+5,000 virtual users & GET Fetch sponsors & 36,332 & 120.90 & 3,467 & 0\% \\
+\hline
+5,000 virtual users & GET Check Health & 35,068 & 116.69 & 2,817 & 0\% \\
+\hline
+10,000 virtual users & GET Fetch sponsors & 102,025 & 336.47 & 2,777 & 0\% \\
+\hline
+10,000 virtual users & GET Check Health & 98,575 & 325.09 & 1,520 & 0\% \\
+\hline
+\end{longtable}
+}
+
+\subsection*{\parbox{\textwidth}{\centering A.6: Swagger/OpenAPI Implementation Result}}
+\label{app:integration-evidence}
+\addcontentsline{toc}{subsection}{A.6: Swagger/OpenAPI Implementation Result}
+
+This appendix was included to show why interactive API documentation was needed for future system integrations, and the Swagger/OpenAPI implementation was completed on April 8, 2026 with supporting evidence exported with the appendix package on April 27, 2026.
+
+{\footnotesize
+Table~\ref{table:appendix-swagger-result} documents the Swagger/OpenAPI implementation evidence used to support future integration readiness.
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.26\linewidth}|>{\raggedright\arraybackslash}p{0.46\linewidth}|>{\centering\arraybackslash}p{0.18\linewidth}|}
+\hline
+\textbf{Implementation item} & \textbf{Evidence summarized from Swagger/OpenAPI PDF file} & \textbf{Result} \\
+\hline
+\endfirsthead
+\multicolumn{3}{c}{\textbf{A.6: Swagger/OpenAPI Implementation Result (continued)}}\\
+\hline
+\textbf{Implementation item} & \textbf{Evidence summarized from Swagger/OpenAPI PDF file} & \textbf{Result} \\
+\hline
+\endhead
+\hline
+\caption{Swagger/OpenAPI implementation result gathered from the implementation summary PDF file}\label{table:appendix-swagger-result}
+\endlastfoot
+Purpose & Interactive API documentation was implemented to help external system developers explore, test, and integrate with the ISM Sponsor REST API. & IMPLEMENTED \\
+\hline
+Implementation date & The summary identifies the implementation date as April 8, 2026. & IMPLEMENTED \\
+\hline
+Package version & Swashbuckle.AspNetCore version 6.6.2 was added to support Swagger/OpenAPI documentation. & IMPLEMENTED \\
+\hline
+API version & The documented API version is v1. & IMPLEMENTED \\
+\hline
+Project dependency & The ISMSponsor.csproj file includes the Swashbuckle.AspNetCore package reference. & IMPLEMENTED \\
+\hline
+Program configuration & Program.cs includes endpoint API explorer services, Swagger generation, OpenAPI metadata, and Swagger endpoint configuration. & IMPLEMENTED \\
+\hline
+Integration relevance & The API documentation supports future integration with the Student Charging Portal, PowerSchool, NetSuite, and OBS-related workflows. & READY FOR REVIEW \\
+\hline
+\end{longtable}
+}
